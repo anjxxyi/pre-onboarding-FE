@@ -7,8 +7,8 @@ const Navigation = () => {
   return (
     <nav>
       <ul>
-        <li><Link to={`/auth/signin`}>Page1</Link></li>
-        <li><Link to={`/result`}>Page2</Link></li>
+        <li><Link to={`/auth/login`}>Page : JWT Login</Link></li>
+        <li><Link to={`/result`}>Page : Users</Link></li>
       </ul>
     </nav>
   )

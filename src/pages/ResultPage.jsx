@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../api/const';
 
 const ResultPage = () => {
-  const [data, setData] = useState([]);
+  const [usersInfo, serUsersInfo] = useState([]);
   useEffect(() => {
     axios.get(
-      "https://64f732e69d775408495348ae.mockapi.io/api/v1/authmock")
-      .then(response => setData(response.data)
+      `${ BASE_URL }/users`)
+      .then(res => serUsersInfo(res.data)
       )
   }, []);
 
@@ -14,11 +15,14 @@ const ResultPage = () => {
     <section className="page-result">
       <h2>Data Result</h2>
       <ul>
-        {data.map((value, index) => {
+        {usersInfo.map((value, index) => {
+          if (index > 3) return;
           return (
             <li key={index}>
-              <span>ID : {value.id}</span>
               <span>Name : {value.name}</span>
+              <span>Email : {value.email}</span>
+              <span>Password : {value.password}</span>
+              <span>Role : {value.role}</span>
             </li>
           )
         })}

@@ -1,10 +1,10 @@
 import React from 'react'
-import SigninForm from '../components/auth/SigninForm'
+import LoginForm from '../components/auth/LoginForm'
 
 const AuthPage = () => {
   return (
     <section className="page-auth">
-      <SigninForm />
+      <LoginForm />
     </section>
   )
 }
